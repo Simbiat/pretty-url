@@ -1,0 +1,21 @@
+{
+    "name": "simbiat/prettyurl",
+    "type": "library",
+    "keywords": ["pretty","safe", "url","transliteration"],
+    "description": "Small class to transliterate lots of characters and make a safe and pretty URL.",
+    "homepage": "https://github.com/simbiat/prettyurl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Kustov",
+            "email": "simbiat@outlook.com",
+            "homepage": "https://simbiat.ru",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "PrettyURL\\": "/"
+        }
+    }
+}
