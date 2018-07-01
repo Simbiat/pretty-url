@@ -4850,9 +4850,9 @@ class PrettyURL
         $string = str_replace($this->needles, $this->replaces, $string);
         $string = preg_replace('\s+', $this->$whitespace, $string);
         if ($urlsafe) {
-            $string = preg_repalce('[^a-zA-Z\d]', '', $string);
+            $string = preg_repalce('[^a-zA-Z\d'.$this->$whitespace.']', '', $string);
         } else {
-            $string = preg_repalce('[^a-zA-Z\d'.$this->urlsafe.']', '', $string);
+            $string = preg_repalce('[^a-zA-Z\d'.$this->urlsafe.$this->$whitespace.']', '', $string);
         }
         return $string;
     }
