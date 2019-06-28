@@ -4846,7 +4846,7 @@ class PrettyURL
         $this->$whitespace = $whitespace;
     }
     
-    public function pretty($string, bool $urlsafe = true): string
+    public function pretty(string $string, bool $urlsafe = true): string
     {
         $string = str_replace($this->needles, $this->replaces, $string);
         $string = preg_replace('/\s+/', $this->whitespace, $string);
