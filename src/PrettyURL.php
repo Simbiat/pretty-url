@@ -4,10 +4,10 @@ namespace PrettyURL;
 
 class PrettyURL
 {
-    private $whitespace = '-';
-    private $urlsafe = '\+\*\'\(\);\/\?:@=&"<>#%{}\|\\\\\^~\[\]`';
-    private $needles = array();
-    private $replaces = array(
+    private string $whitespace = '-';
+    private string $urlsafe = '\+\*\'\(\);\/\?:@=&"<>#%{}\|\\\\\^~\[\]`';
+    private array $needles = [];
+    private array $replaces = [
         'ꭕ'=>'x',
         'ꞕ'=>'h',
         'ꬰ'=>'a',
@@ -4838,10 +4838,11 @@ class PrettyURL
         'ー'=>'',
         'ヽ'=>'',
         'ヾ'=>'',
-    );
+    ];
     
     public function __construct(string $whitespace = '-')
     {
+        #Setting needles (characters to search for) in order not to duplicate the values
         $this->needles = array_keys($this->replaces);
         $this->$whitespace = $whitespace;
     }
