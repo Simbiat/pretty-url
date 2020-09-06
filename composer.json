@@ -4,7 +4,7 @@
     "keywords": ["pretty","safe", "url","transliteration"],
     "description": "Small class to transliterate lots of characters and make a safe and pretty URL.",
     "homepage": "https://github.com/Simbiat/prettyurl",
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "authors": [
         {
             "name": "Dmitry Kustov",
