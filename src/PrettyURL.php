@@ -4,8 +4,7 @@ namespace PrettyURL;
 
 class PrettyURL
 {
-    private string $whitespace = '-';
-    private string $urlsafe = '\+\*\'\(\);\/\?:@=&"<>#%{}\|\\\\\^~\[\]`';
+    private string $urlunsafe = '\+\*\'\(\);\/\?:@=&"<>#%{}\|\\\\\^~\[\]`';
     private array $needles = [];
     private array $replaces = [
         'ꭕ'=>'x',
@@ -4840,21 +4839,20 @@ class PrettyURL
         'ヾ'=>'',
     ];
     
-    public function __construct(string $whitespace = '-')
+    public function __construct()
     {
         #Setting needles (characters to search for) in order not to duplicate the values
         $this->needles = array_keys($this->replaces);
-        $this->$whitespace = $whitespace;
     }
     
-    public function pretty(string $string, bool $urlsafe = true): string
+    public function pretty(string $string, string $whitespace = '-', bool $urlsafe = true): string
     {
         $string = str_replace($this->needles, $this->replaces, $string);
-        $string = preg_replace('/\s+/', $this->whitespace, $string);
+        $string = preg_replace('/\s+/', $whitespace, $string);
         if ($urlsafe) {
-            $string = preg_replace('[^a-zA-Z\d'.$this->whitespace.']', '', $string);
+            $string = preg_replace('[^a-zA-Z\d'.$whitespace.']', '', $string);
         } else {
-            $string = preg_replace('[^a-zA-Z\d'.$this->urlsafe.$this->whitespace.']', '', $string);
+            $string = preg_replace('[^a-zA-Z\d'.$this->urlunsafe.$whitespace.']', '', $string);
         }
         return $string;
     }
