@@ -1,29 +1,33 @@
 {
-    "name": "simbiat/prettyurl",
+    "name": "simbiat/pretty-url",
     "type": "library",
-    "keywords": ["pretty","safe", "url","transliteration"],
+    "keywords": [
+        "pretty",
+        "safe",
+        "url",
+        "transliteration"
+    ],
     "description": "Small class to transliterate lots of characters and make a safe and pretty URL.",
-    "homepage": "https://github.com/Simbiat/prettyurl",
+    "homepage": "https://github.com/Simbiat/pretty-url",
     "license": "AGPL-3.0-or-later",
     "authors": [
         {
-            "name": "Dmitry Kustov",
-            "email": "simbiat@outlook.com",
-            "homepage": "https://simbiat.ru",
+            "name": "Dmitrii Kustov",
+            "email": "support@simbiat.dev",
+            "homepage": "https://www.simbiat.dev",
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-		"php": ">=7.4.0"
-	},
+        "php": "^8.4"
+    },
     "autoload": {
         "psr-4": {
-            "PrettyURL\\": "src/"
+            "Simbiat\\HTTP\\": "src/"
         }
     },
-	"support": {
-		"issues": "https://github.com/Simbiat/prettyurl/issues",
-		"source": "https://github.com/Simbiat/prettyurl"
-	}
+    "support": {
+        "issues": "https://github.com/Simbiat/pretty-url/issues",
+        "source": "https://github.com/Simbiat/pretty-url"
+    }
 }
